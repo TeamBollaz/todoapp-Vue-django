@@ -1,0 +1,8 @@
+django corheaders
+django rest_framework
+django webpack loader
+
+npm 
+webpack-bundle-tracker
+axios
+router

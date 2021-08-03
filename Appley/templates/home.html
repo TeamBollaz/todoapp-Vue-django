@@ -1,0 +1,23 @@
+{% extends "interface/home.html" %}
+{% load render_bundle from webpack_loader %}
+
+{% render_bundle 'app'%}
+{% block title %} Dashboard {% endblock %} 
+
+
+{% block content %}	
+<h1>Dashboard</h1>
+
+<div id="app">
+
+</div>
+
+{% render_bundle 'app' 'js' %}
+{% endblock content %}
+
+
+{% block javascripts %}
+
+
+
+{% endblock javascripts %}

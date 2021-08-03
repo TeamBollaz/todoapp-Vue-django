@@ -1,0 +1,79 @@
+{% load i18n static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>
+        ToDO- {% block title %}{% endblock %}
+    </title>   
+    
+    <link rel="stylesheet" href="/static/style.css">
+
+
+    {% block stylesheets %}
+    <style>
+        .input-group {
+	margin-top: 10px;
+		display: flex;
+		flex: 0 0 auto;
+		flex-flow: row wrap;
+		align-items: center;
+		margin-bottom: 20px;
+}
+
+.form-control {
+	display: block;
+	width: 100%;
+	height: calc(1.6em + 0.75rem + 2px);
+	padding: 0.375rem 0.75rem;
+	font-size: 0.9rem;
+	font-weight: 400;
+	line-height: 1.6;
+	color: black;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #ced4da;
+	border-radius: 0.25rem;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.logform {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1.25rem;
+  margin-top: 20px;
+}
+.cardip-body {
+	color: black;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-top: 40px;
+  margin-left: 30%;
+  margin-right: 70%;
+  background: rgba(255,255,255,0.4);;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  backdrop-filter: blur(6px);
+}
+
+.cardip-body h4 {
+	text-align: center;
+}
+    </style>
+    {% endblock stylesheets %}
+
+</head>
+<body >
+
+    <div class="cardip-body" >
+        {% block content %}{% endblock content %}
+    </div>
+    
+    {% block javascripts %}{% endblock javascripts %} 
+
+</body>
+</html>

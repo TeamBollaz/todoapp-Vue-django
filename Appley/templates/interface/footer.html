@@ -1,0 +1,72 @@
+<div class="data">
+			<div>
+				<div class="value" >4</div>
+				<div class="descp">C</div>
+			</div>
+			<div>
+				<i class="fa fa-car"></i>
+			</div>
+		</div>
+		<div class="data">
+			<div>
+				<div class="value" >2</div>
+				<div class="descp">A</div>
+			</div>
+			<div>
+				<i class="fa fa-car"></i>
+			</div>
+		</div>
+		<div class="data">
+			<div>
+				<div class="value" >6</div>
+				<div class="descp">B</div>
+			</div>
+			<div>
+				<i class="fa fa-car"></i>
+			</div>
+		</div>
+		<div class="data">
+			<div>
+				<div class="value" >7</div>
+				<div class="descp">K</div>
+			</div>
+			<div>
+				<i class="fa fa-car"></i>
+			</div>
+		</div>
+	</div>
+
+	<!--<div class="footer">
+		footer
+	</div> -->
+</div>
+
+
+<script>
+	function toggleMenu(){
+		let toggle =  document.querySelector('.toggle');
+		let sidebar =  document.querySelector('.sidebar');
+		let main =  document.querySelector('.main');
+		let weldata =  document.querySelector('.weldata');
+		toggle.classList.toggle('active')
+		sidebar.classList.toggle('active')
+		main.classList.toggle('active')
+		weldata.classList.toggle('active')
+	}
+	function menuToggle(){
+		const toggleMenu =  document.querySelector('.user');
+		toggleMenu.classList.toggle('active')
+	}
+
+	let drop = document.querySelectorAll('.drop');
+	
+	for (var i = 0; i < drop.length; i++) {
+		drop[i].addEventListener('click', (e)=>{
+		let dropParent = e.target.parentElement.parentElement;
+			console.log(dropParent);
+		dropParent.classList.toggle("showsub-bar");
+		});
+	}
+</script>
+</body>
+</html>

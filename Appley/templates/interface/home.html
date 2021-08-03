@@ -1,0 +1,120 @@
+{% load i18n static %}
+<!DOCTYPE html>
+<html lang="en" class="dhml">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie-edge">
+	<title>dashboard</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static "font-awesome/css/font-awesome.min.css"%}">
+</head>
+<body>
+
+
+<div class="container">
+
+	<div class="sidebar active">
+
+		<ul>
+			<li>
+				<div class="weldata active">
+					<span class="facon"><i class="fa fa-home"></i> </span>
+					<span class="link" ><h2>Welcome</h2></span>
+				</div>
+			</li>
+			<li><a href="{% url 'home' %}">
+				<span class="facon"><i class="fa fa-dashboard"></i> </span>
+				<span class="link blank" >DASHBOARD</span>
+				<span class="facox"> </span>
+			</a>
+			</li>
+			<li><a href="#">
+				<span class="facon"><i class="fa fa-home"></i> </span>
+				<span class="link blank" >Users</span>
+				<span class="facox"> </span>
+			</a>
+		</li>
+
+			<li><a href="#">
+				<span class="facon"><i class="fa fa-home"></i> </span>
+				<span class="link blank" >Fruits</span>
+				<span class="facox"> </span>
+			</a>
+		</li>
+			<li><a href="#">
+				<span class="facon"><i class="fa fa-home"></i> </span>
+				<span class="link blank" >1</span>
+				<span class="facox"></span>
+			</a>
+		</li>
+			<li><a href="#">
+				<span class="facon"><i class="fa fa-gear"></i> </span>
+				<span class="link blank" >2</span>
+				<span class="facox"></span>
+			</a>
+		</li>
+			
+
+		</ul>
+	</div>
+</div>
+
+<div class="main active">
+	<div class="header">
+		<div class="toggle active" onclick="toggleMenu();"></div>
+		<div class="title" >
+			TODO
+		</div>
+
+		<div class="user" >
+			<div class="image" onclick="menuToggle();">
+				<span class="facon"><img src="{% static "img/user.png"%}"></span>
+			</div>
+			<div class="profile">
+				<h3>User</h3>
+				<ul>
+					<li>
+					<a href="{% url 'logout' %}"><i class="fa fa-home"></i>Logout					
+					</a></li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+	<div class="content">
+		{% block content %}{% endblock content %}
+	</div>
+
+	
+</div>
+
+
+<script>
+	function toggleMenu(){
+		let toggle =  document.querySelector('.toggle');
+		let sidebar =  document.querySelector('.sidebar');
+		let main =  document.querySelector('.main');
+		let weldata =  document.querySelector('.weldata');
+		toggle.classList.toggle('active')
+		sidebar.classList.toggle('active')
+		main.classList.toggle('active')
+		weldata.classList.toggle('active')
+	}
+	function menuToggle(){
+		const toggleMenu =  document.querySelector('.user');
+		toggleMenu.classList.toggle('active')
+	}
+
+	let drop = document.querySelectorAll('.drop');
+	
+	for (var i = 0; i < drop.length; i++) {
+		drop[i].addEventListener('click', (e)=>{
+		let dropParent = e.target.parentElement.parentElement;
+			console.log(dropParent);
+		dropParent.classList.toggle("showsub-bar");
+		});
+	}
+</script>
+</body>
+</html>

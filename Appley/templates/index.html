@@ -1,0 +1,17 @@
+{% load render_bundle from webpack_loader %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>vue</title>
+</head>
+<body>
+	<h1>Django</h1>
+
+	<div id="app">
+	
+	</div>
+	
+{% render_bundle 'app' 'js' %}
+</body>
+</html>
+

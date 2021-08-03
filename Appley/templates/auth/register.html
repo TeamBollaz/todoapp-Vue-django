@@ -1,0 +1,55 @@
+{% extends "interface/log-reg.html" %}
+
+{% block title %} Register {% endblock %}
+
+{% block content %} 
+
+
+	<div class="logform" >
+		<div >
+			
+		</div>
+		<h4 >
+			Register
+		</h4>
+		<span class="msgs" >
+			{% if msg %}
+				{{ msg | safe }}
+					{% else %}
+						Add your credentials
+					{% endif %} 
+		</span>
+		{% if not success %}
+		<form role="form" method="post" action="">
+			{% csrf_token %}  
+				<div class="input-group"  >
+					{{ form.username }}
+				</div>
+				<span >{{ form.username.errors }}</span>
+				<div class="input-group" >
+					{{ form.email }}
+				</div>
+				<span>{{ form.email.errors }}</span>
+				<div class="input-group" >
+					{{ form.password1 }}
+				</div>
+				<span >{{ form.password1.errors }}</span>
+				<div class="input-group">
+					{{ form.password2 }}
+				</div>
+				<span >{{ form.password2.errors }}</span>
+				<button type="submit" name="Signup" >Register</button>
+		</form>
+		<p ><a href="{% url 'login' %}" >Login</a></p>
+			{% endif %}				
+	</div>
+
+
+{% endblock content %}
+
+
+{% block javascripts %}
+
+
+
+{% endblock javascripts %} 
